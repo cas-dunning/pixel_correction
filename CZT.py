@@ -58,10 +58,8 @@ def main():
                                             proj_files, size, (window_min,window_max), save=False)
 
     # This will loop over all your projection images and save as a numpy array to be loaded later in the same directory
-    pj_index = 0
-    for pj in new_proj_images:
-        np.save(directory_dataproj+proj_files[pj_index][0:-4]+".npy",pj)
-        pj_index += 1
+    for ind, pj in enumerate(new_proj_images):
+        np.save(directory_dataproj+proj_files[ind][0:-4]+".npy",pj)
 
 def getDataFiles(dir):
     '''
